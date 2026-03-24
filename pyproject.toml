@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "event-pubsub"
+version = "0.0.1"
+description = "A powerful, NestJS-inspired event emitter for Python with wildcard and async support."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = [
+    "event",
+    "emitter",
+    "event-driven",
+    "wildcard",
+    "asyncio",
+    "nestjs-style",
+    "DDD",
+    "Hexagonal"
+]
+authors = [
+    {name = "Seungkyu-Han", email="trust1204@gmail.com"}
+]
+
+dependencies = [
+
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Seungkyu-Han/event-pubsub"
+"Bug Tracker" = "https://github.com/Seungkyu-Han/event-pubsub/issues"
+"Documentation" = "https://github.com/Seungkyu-Han/event-pubsub#readme"
+"Source" = "https://github.com/Seungkyu-Han/event-pubsub"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311']
+
+
+[tool.setuptools]
+packages = ["event_pubsub"]
