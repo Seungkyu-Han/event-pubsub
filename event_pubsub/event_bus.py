@@ -17,9 +17,13 @@ class EventBus:
             handlers = self._subscribers.get(event_type, [])
             tasks = []
             for handler in handlers:
-                if inspect.iscoroutinefunction(handler):
-                    tasks.append(handler(*args, **kwargs))
-                else:
-                    tasks.append(asyncio.to_thread(handler, *args, **kwargs))
+                try:
+                    if inspect.iscoroutinefunction(handler):
+                        tasks.append(handler(*args, **kwargs))
+                    else:
+                        tasks.append(asyncio.to_thread(handler, *args, **kwargs))
+                except TypeError as e:
+                    print(f"[EventBus] handler error: {handler} - {e}")
+                    raise e
 
             await asyncio.gather(*tasks)
