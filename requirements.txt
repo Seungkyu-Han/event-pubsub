@@ -1,0 +1,11 @@
+build==1.4.2
+coverage==7.13.5
+iniconfig==2.3.0
+packaging==26.0
+pluggy==1.6.0
+Pygments==2.19.2
+pyproject_hooks==1.2.0
+pytest==9.0.2
+pytest-asyncio==1.3.0
+pytest-cov==7.1.0
+typing_extensions==4.15.0

@@ -1,2 +1,7 @@
 .idea/**
 .idea
+
+.coverage
+
+dist/**
+event_pubsub.egg-info/**
