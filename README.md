@@ -2,6 +2,12 @@
 
 A simple and flexible asynchronous Event Pub/Sub library for Python.
 
+
+![PyPI version](https://img.shields.io/pypi/v/event-pubsub)
+[![codecov](https://codecov.io/gh/Seungkyu-Han/event-pubsub/graph/badge.svg?token=7617Y6JOJI)](https://codecov.io/gh/Seungkyu-Han/event-pubsub)
+![PyPI downloads](https://img.shields.io/pypi/dm/event-pubsub)
+![license](https://img.shields.io/pypi/l/event-pubsub)
+
 ---
 
 ## 🚀 Installation
