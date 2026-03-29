@@ -1,4 +1,5 @@
 import asyncio
+import inspect
 
 
 class EventBus:
@@ -13,8 +14,12 @@ class EventBus:
 
     async def emit(self, event_type: str, *args, **kwargs):
         if event_type in self._subscribers:
-            tasks = [
-                handler(*args, **kwargs)
-                for handler in self._subscribers[event_type]
-            ]
+            handlers = self._subscribers.get(event_type, [])
+            tasks = []
+            for handler in handlers:
+                if inspect.iscoroutinefunction(handler):
+                    tasks.append(handler(*args, **kwargs))
+                else:
+                    tasks.append(asyncio.to_thread(handler, *args, **kwargs))
+
             await asyncio.gather(*tasks)
